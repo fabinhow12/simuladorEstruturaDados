@@ -50,7 +50,7 @@ public class Sobre extends javax.swing.JFrame {
 
         jLabel3.setText("Link do projeto(github): ");
 
-        jLabelLink.setText("https://github.com/fabinhow12/estruturaDados.git");
+        jLabelLink.setText("https://github.com/fabinhow12/simuladorEstruturaDados");
         jLabelLink.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabelLinkMouseClicked(evt);
@@ -90,7 +90,7 @@ public class Sobre extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addGap(18, 18, 18)
-                                .addComponent(jLabelLink, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(jLabelLink, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(233, 233, 233)
                         .addComponent(jLabel4)))
@@ -119,7 +119,7 @@ public class Sobre extends javax.swing.JFrame {
     private void jLabelLinkMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelLinkMouseClicked
         try {
             // Chama O Browser Proposta
-            java.awt.Desktop.getDesktop().browse( new java.net.URI("https://github.com/fabinhow12/estruturaDados.git"));
+            java.awt.Desktop.getDesktop().browse( new java.net.URI("https://github.com/fabinhow12/simuladorEstruturaDados"));
         } catch (URISyntaxException | IOException ex) {
             Logger.getLogger(Sobre.class.getName()).log(Level.SEVERE, null, ex);
         }

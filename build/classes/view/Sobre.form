@@ -39,7 +39,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jLabelLink" min="-2" pref="395" max="-2" attributes="0"/>
+                              <Component id="jLabelLink" min="-2" pref="415" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -90,7 +90,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabelLink">
       <Properties>
-        <Property name="text" type="java.lang.String" value="https://github.com/fabinhow12/estruturaDados.git"/>
+        <Property name="text" type="java.lang.String" value="https://github.com/fabinhow12/simuladorEstruturaDados"/>
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabelLinkMouseClicked"/>
