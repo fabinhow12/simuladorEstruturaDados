@@ -14,6 +14,7 @@ import java.util.List;
  * @author fabio
  */
 public class MapaLista {
+    
     List<Associacao> mapaLista = new ArrayList<>();
     private int tamanho = 0;
     

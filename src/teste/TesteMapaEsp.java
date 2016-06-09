@@ -5,7 +5,12 @@
  */
 package teste;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import repositorio.MapaEspalhamento;
+import static teste.ITeste.MAIOR;
+import static teste.ITeste.MENOR;
 
 /**
  *
@@ -13,13 +18,26 @@ import repositorio.MapaEspalhamento;
  */
 public class TesteMapaEsp implements ITeste {
     MapaEspalhamento<Integer, String> mapaEsp = new MapaEspalhamento<>();
+    List<Integer> aleatorios = new ArrayList<>();
+    List<Integer> aleatoriosMuitos = new ArrayList<>();
     
+    public TesteMapaEsp(){
+        for (int i = 0; i < MENOR; i++) {
+            aleatorios.add(i + 1);
+        }
+        Collections.shuffle(aleatorios);
+
+        for (int i = 0; i < MAIOR; i++) {
+            aleatoriosMuitos.add(i + 1);
+        }
+        Collections.shuffle(aleatoriosMuitos);
+    }
     
     @Override
     public long adicionarPouco() {
         long tempoInicio = System.currentTimeMillis();
         for (int i = 0; i < MENOR; i++) {
-            mapaEsp.adicionar((i+1), "teste"+(i+1));
+            mapaEsp.adicionar(aleatorios.get(i), "teste"+(i+1));
         }
         long tempoDiferenca = System.currentTimeMillis();
         return (tempoDiferenca - tempoInicio);
@@ -60,7 +78,7 @@ public class TesteMapaEsp implements ITeste {
     public long adicionarMuito() {
         long tempoInicio = System.currentTimeMillis();
         for (int i = 0; i < MAIOR; i++) {
-            mapaEsp.adicionar((i+1), "teste"+(i+1));
+            mapaEsp.adicionar(aleatoriosMuitos.get(i), "teste"+(i+1));
         }
         long tempoDiferenca = System.currentTimeMillis();
         return (tempoDiferenca - tempoInicio);
@@ -69,7 +87,7 @@ public class TesteMapaEsp implements ITeste {
     @Override
     public long removerMuito() {
         long tempoInicio = System.currentTimeMillis();
-        for (int i = 0; i < MENOR; i++) {
+        for (int i = 0; i < MAIOR; i++) {
             mapaEsp.remove((i+1));
         }
         long tempoDiferenca = System.currentTimeMillis();

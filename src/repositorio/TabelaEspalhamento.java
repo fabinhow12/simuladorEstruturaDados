@@ -69,13 +69,9 @@ public class TabelaEspalhamento<V> {
             
             List<V> lista = this.tabela.get(indice);
 
-            for (V get : lista) {
-                if (get.equals(elemento)) {
-                    
-                  get = nome;
-                    
-                }
-            }
+            lista.stream().filter((get) -> (get.equals(elemento))).forEach((get) -> {
+                get = nome;
+            });
         } else {
             throw new IllegalArgumentException("Palavra Não Existe");
 

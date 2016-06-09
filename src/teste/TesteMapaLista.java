@@ -5,9 +5,14 @@
  */
 package teste;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import repositorio.MapaLista;
+import static teste.ITeste.MAIOR;
+import static teste.ITeste.MENOR;
 
 /**
  *
@@ -15,12 +20,27 @@ import repositorio.MapaLista;
  */
 public class TesteMapaLista implements ITeste{
      MapaLista mapaLista = new MapaLista();
+     List<Integer> aleatorios = new ArrayList<>();
+    List<Integer> aleatoriosMuitos = new ArrayList<>();
+    
+    public TesteMapaLista(){
+        
+        for (int i = 0; i < MENOR; i++) {
+            aleatorios.add(i + 1);
+        }
+        Collections.shuffle(aleatorios);
+
+        for (int i = 0; i < MAIOR; i++) {
+            aleatoriosMuitos.add(i + 1);
+        }
+        Collections.shuffle(aleatoriosMuitos);
+    }
     
      @Override
     public long adicionarPouco() {
         long tempoInicio = System.currentTimeMillis();
         for (int i = 0; i < MENOR; i++) {
-            mapaLista.adiciona((i+1), "teste"+(i+1));
+            mapaLista.adiciona(aleatorios.get(i), "teste"+(i+1));
         }
         long tempoFinal = System.currentTimeMillis();
         return (tempoFinal - tempoInicio);
@@ -55,7 +75,7 @@ public class TesteMapaLista implements ITeste{
         long tempoInicio = System.currentTimeMillis();
         for (int i = 0; i < MENOR; i++) {
             try {
-                mapaLista.contemChave((i+1));
+                mapaLista.Pesquisa((i+1));
             } catch (Exception ex) {
                 Logger.getLogger(TesteArvore.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -68,7 +88,7 @@ public class TesteMapaLista implements ITeste{
     public long adicionarMuito() {
         long tempoInicio = System.currentTimeMillis();
         for (int i = 0; i < MAIOR; i++) {
-            mapaLista.adiciona((i+1), "teste"+(i+1));
+            mapaLista.adiciona(aleatoriosMuitos.get(i), "teste"+(i+1));
         }
         long tempoFinal = System.currentTimeMillis();
         return (tempoFinal - tempoInicio);
@@ -87,7 +107,7 @@ public class TesteMapaLista implements ITeste{
     @Override
     public long atualizarMuito() {
         long tempoInicio = System.currentTimeMillis();
-        for (int i = 0; i < MENOR; i++) {
+        for (int i = 0; i < MAIOR; i++) {
             mapaLista.atualiza((i+1), "novo"+(i+1));
         }
         long tempoFinal = System.currentTimeMillis();
@@ -97,7 +117,7 @@ public class TesteMapaLista implements ITeste{
     @Override
     public long pesquisarMuito() {
         long tempoInicio = System.currentTimeMillis();
-        for (int i = 0; i < MENOR; i++) {
+        for (int i = 0; i < MAIOR; i++) {
             mapaLista.Pesquisa((i+1));
         }
         long tempoFinal = System.currentTimeMillis();

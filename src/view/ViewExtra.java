@@ -133,7 +133,7 @@ public class ViewExtra extends javax.swing.JFrame {
         for (int i = 0; i < opcao; i++) {
            desenha.adicionar(aleatorio.get(i), "teste"+i);
         }
-        
+        desenha.desenha();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
